@@ -1,0 +1,31 @@
+header{ /* Color de header*/
+    background-color: #FD93D8;
+    }
+table{ /*tamaño de la tabla*/
+    width: 100%;
+    
+}
+body{
+    background-image: linear-gradient( 103.3deg,  rgba(252,225,208,1) 30%, rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );;
+}
+.fondo{
+    width: 100%;
+    background-color: #FD93D8;
+}
+.logo{ /*tamaño del logo*/
+    width: 40%;
+    height: 40%;
+}
+.Izquierda{ /*alineazion a la izquiera*/
+float: left;
+}
+
+.Derecha{ /*alineacion a la derecha*/
+float: right;
+}
+.texto{/*alineacion al centro*/
+    font-size: 1.5cm;
+    font-weight: 250px;
+    color: hotpink;
+    text-align: center;
+}

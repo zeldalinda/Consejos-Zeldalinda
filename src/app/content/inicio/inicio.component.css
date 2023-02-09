@@ -1,0 +1,30 @@
+body{
+    background-image: linear-gradient( 103.3deg,  rgba(252,225,208,1) 30%,
+     rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );;
+}
+table{
+    width: 100%;
+}
+.fuente{
+    text-align: table;
+    font-size: 100%;
+    size: 350px;
+    width: 350px;
+    font-family: fantasy;
+    color: rgb(117, 3, 64);
+}
+img{
+    max-width: 800px;
+    width: 325px;
+    height: 280px;
+ }
+ @media screen and (max-width: 800px){
+    body{
+      width: 100%;
+    }
+    table{
+        width: 100%;
+    }
+}
+body {width: 100%;} #container{width: 80%;}
+table {width: 100%;} #container{width: 80%;}

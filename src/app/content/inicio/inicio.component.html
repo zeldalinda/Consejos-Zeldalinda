@@ -1,0 +1,31 @@
+<body>
+    <table>
+        <p class="fuente">
+            En esta página web aprenderás lo básico para comenzar en el mundo del stream
+            tanto programa te recomiendo, ideas para tus alertas, para tus logos, 
+            stickers, overlay etc.
+        </p> 
+        <p></p>
+            <p class="fuente">
+             Lo explicare todo de forma sencilla para que no tengas complicaciones tendrás 
+             todo  a la mano y tendrás un comienzo en el streaming como un conocedor y 
+             evitaras sustos, dudas o estrés al momento de arreglar 
+             los errores o dificultades técnicas.
+            </p>
+            <p></p>
+               <p class="fuente">
+                En los siguientes apartados podemos encontrar tanto tutoriales, consejos e ideas 
+                que podran ayudarte para poder comenzar en el mundo del streaming. Espero que te sirvan mucho
+                cualquier duda o sugerencia me puedes escribir en mis redes sociales de aqui abajo.
+               </p>
+
+              <owl-carousel
+              [options]="{ items: 1, nav: false, dots: true}"
+              [carouselClasses]="['owl-theme']">
+              <div *ngFor ="let imagen of imagenes">
+                   <img src="{{imagen}}"  width="325px" > 
+              </div>
+              </owl-carousel>
+
+    </table>
+</body>

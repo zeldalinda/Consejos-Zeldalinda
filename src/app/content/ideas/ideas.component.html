@@ -1,0 +1,98 @@
+<body>
+    <table>
+        <img src="../../../assets/imagenes/IdeasDiseño2.png" width="300" height="250">
+         <p class="Diseño">Las ideas que voy a dar aquí dependen de la temática/diseño que gustes tener 
+             para tus alertas, overlays, avatar, alguna temática de colores, 
+             algún personaje, anime, videojuego etc.
+         </p>
+         <p class="Diseño">
+            En mi caso te recomiendo que elijas la temática que más te guste para la creación de todos 
+            los elementos de tu stream
+            si tienes algún conocimiento previo de edición y te crees capaz de crear 
+            tus marcos para stream adelante ponles tu toque personal owo, si no puedes pedirle
+            a alguien que trabaje de la creación de overlays , si no tienes los suficientes recursos
+            en internet existen varios overlays de uso libre, los limites solo los pones tú owo/
+          </p>
+            <img src="../../../assets/imagenes/overlay.png" width="300" height="250"> 
+            <p class="Diseño">
+             En las siguientes imagenes les dare algunas ideas de como podrian ser sus overlays dependiendo 
+             de su colo favorito, es simplemente para darles inspiracion (Ninguna de las imagenes me pertenece)
+             todo fue hecho por el simple motivo de inspiracion para ayudarles a darles una idea de como les gustaria 
+             hacer sus overlays y sus avatars, espero les guste.
+            </p>
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="DiseñoB"
+              (click)="agregar()">Agregar diseño </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog">
+                <div class="modal-content">
+                 <div class="modal-header" class="DiseñoTi">
+                <h4 class="modal-title" id="exampleModalLabel" *ngIf="proceso_agregar">Agregar diseño uwu</h4>
+                <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_editar">Editar diseño uwu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+            <form>
+              <div class="modal-footer" class="DiseñoV">
+                <label for="recipient-name" class="col-form-label">Nombre del autor:</label>
+                <input type="text" [(ngModel)]="form.nombre" name="nombre" class="form-control" id="recipient-name">
+              </div>
+               <div clas="modal-footer" class="DiseñoV">
+                 <label for="message-text" class="col-form-label" >Descripción:</label>
+                 <textarea [(ngModel)]="form.descripcion" name="descripcion" class="form-control" id="message-text"></textarea>
+               </div>
+               <div  class="DiseñoV">
+                 <br>
+                <label class="input-group-text" for="inputGroupSelect01"  class="DiseñoV">Plataformas:</label>
+                <select class="form-select" id="inputGroupSelect01" [(ngModel)]="form.plataforma" name="plataforma" >
+                  <option selected>...</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Twitch">Twitch</option>
+                  <option value="Youtube">Youtube</option>
+                </select>     
+                <br>
+                <div class="mb-3" >
+                  <label for="formFile" class="form-label">Cargar imagen</label>
+                  <input class="form-control" type="file" id="formFile" accept="imagen/*" (change)="almacenar($event)" >
+                  <img src="{{url}}" class="tamaño">
+                </div>      
+               </div>
+               <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="publicar()" *ngIf="proceso_agregar">Publicar</button>
+                <button type="button" class="btn btn-info click=" (click)="actualizar()" *ngIf="proceso_editar">Actualizar</button>
+                </div>
+            </form>
+          </div>
+         </div>
+       </div>
+       <table>
+         <td>
+         <select type="text" name="orden" [(ngModel)]="orden" (change)="ordenar()"  class="DiseñoFil">
+          <option value="nombre">Nombre</option>
+          <option value="plataformna">Plataforma</option>
+        </select>
+       </td>
+       <td >
+        <select type="text" name="filtro" [(ngModel)]="filtro" (change)="filtrar()" class="form-select form-select-sm" class="DiseñoFil">
+          <option value="Facebook">Facebook</option>
+          <option value="Twitch">Twitch</option>
+          <option value="Youtube">Youtube</option>
+        </select><br>
+      </td>
+        <tr *ngFor="let registro of registros">
+          <td class="columna1">
+            <img src="{{registro.url}}" class="tamaño">
+          </td>
+          <td class="izquierda">
+            <span class="titulo">{{registro.nombre}}</span> <br>
+            <span class="descripcion">{{registro.descripcion}}</span><br>
+            <span clas="plataforma">{{registro.plataforma}}</span><br>
+            <a [routerLink]="" (click)="editar(registro)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a><br>
+            <i class="fas fa-trash icono" (click)="eliminar(registro)"></i>
+          </td>
+        </tr>
+      </table>
+    </table>
+</body>

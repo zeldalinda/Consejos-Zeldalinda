@@ -1,0 +1,80 @@
+<!--mostrar texto en pantalla-->
+Ejercicio 1. {{texto}}
+<br>
+<!--mostrar 2 textos concatenados-->
+Ejercicio 2. {{nombre}} {{apellidos}}
+<br>
+<!-- texto concatenado con espacio-->
+Ejercicio 2.1 {{nombrecomb}}
+<br>
+<!--suma de 2 numeros y mostrar el resultado-->
+Ejercicio 3. La suma de {{numero1}} y {{numero2}} su resultado es {{suma}}
+<br>
+<!--multiplicacion de 2 numeros y mostrar el resultado-->
+Ejercicio 4. La multiplicacion de {{numero1}} y {{numero2}} su resultado es {{multi}}
+<br>
+<!--agregar datos a un arreglo-->
+<label> Ejercicio 5. nombre del alumno </label>
+<input type="text" [(ngModel)]="Estudiantes">  
+<button (click)= "agregar()">Agregar</button>
+<br>
+<!-- Practica 1-->
+<label>Ejercicio 6. Eres hombre o mujer?</label>
+<input type="radio" [(ngModel)]="Sexo" value="hombre">hombre
+<input type="radio" [(ngModel)]="Sexo" value="mujer">mujer
+<button (click)="verificar()">verificar</button>
+<br>
+<!--Practica 2-->
+<label>Ejercicio 7. Calificacion</label>
+<input type="number" [(ngModel)]="calificacion">
+<button (click)="Mostrar()">Mostrar</button>
+<br>
+<!--Practica 3-->
+<label>Ejercicio 8. Operaciones</label><br>
+<label>¿Que operacion deseas realizar?</label>
+<input type="number" [(ngModel)]="numero1"> numero 1
+<input type="number" [(ngModel)]="numero2"> numero 2
+<input type="radio" [(ngModel)]="operaciones" value="suma"> suma
+<input type="radio" [(ngModel)]="operaciones" value="resta"> resta
+<input type="radio" [(ngModel)]="operaciones" value="multi"> multiplicacion
+<input type="radio" [(ngModel)]="operaciones" value="div"> Division
+<button (click)="resultado()">Resultado</button>
+<br>
+<!--Practica 4-->
+<label>Ejercicio 9. Promedio final</label>
+<label>ingresa 3 calificaciones del(0 al 40)</label>
+Calificacion de actividades:
+<input type="number" [(ngModel)]="calif1"> <br>
+Calificacion de Examenes:
+<input type="number" [(ngModel)]="calif2"> <br>
+Favor de ingresar la calificacion del (0 al 20): <br>
+Calificacion del Proyecto:
+<input type="number" [(ngModel)]="calif3"> <br>
+<button (click)="verificar2()">Promedio</button>
+
+
+<!-- Button trigger modal -->
+<label>alumnos destacados</label>
+<label>nombre del alumno</label>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="DiseñoB"
+(click)="agregar()">agregar diseño </button>
+<!--concurso-->
+<br>
+<label>concurso</label><br>
+<label>alumnos mas destacados</label><br>
+<input type="text" [(ngModel)]="Estudiantes"><br>  
+<label>calificacion final</label><br>  
+<input type="number" [(ngModel)]="calificacion"><br>  
+<button (click)= "agregar()">Agregar</button><br>  
+<br>
+<table>
+    <span class="titulo">{{registro.nombre}}</span> <br>
+    <span class="descripcion">{{registro.descripcion}}</span><br>
+    <span clas="plataforma">{{registro.plataforma}}</span><br>
+</table>
+<select type="text" name="orden" [(ngModel)]="orden" (change)="ordenar()"  class="DiseñoFil">
+    <option value="nombre">Nombre</option>
+    <option value="calificacion">Calificacion</option>
+</select>
+

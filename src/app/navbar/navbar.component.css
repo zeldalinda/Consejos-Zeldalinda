@@ -1,0 +1,30 @@
+body{
+    background-image: linear-gradient( 103.3deg,  rgba(252,225,208,1) 30%,
+     rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );;
+}
+.Predeterminada{
+    color: rgb(240, 83, 166);
+    font-size: 85%;
+}
+.Morado{
+    color: darkorchid;
+    font-size: 85%;
+}
+.Azul{
+    color: blue;
+    font-size: 85%;
+}
+.Verde{
+    color: rgb(0, 165, 8);
+    font-size: 85%;
+}
+table{
+    width: 100%;
+}
+.posicion{
+    float: right;
+}
+.TamanoIcono{
+width: 5%;
+height: 5%;
+}

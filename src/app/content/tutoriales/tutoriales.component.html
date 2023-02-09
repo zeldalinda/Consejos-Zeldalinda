@@ -1,0 +1,89 @@
+<body>
+  <table>
+        <img src="../../../assets/imagenes/tutoriales2.png" >
+          <tr class="Diseño">Hola bienvenido al apartado de Tutoriales donde podras aprender todo lo basico para la configuracion de tu stream
+            y te enseñare a arreglar algunos errores y te dare algunos tips para tus stream
+          </tr>
+          <p></p>
+          <h2>1-Como configurar tu obs para agregar los elementos basicos para tu stream</h2>
+            <tr class="Diseño">En este video te voy a explicar como agregar una nueva escena, como quitarles el
+             fondo verde a los videos, como agregar gifs, imagenes, y la captura de tu juego en OBS
+            </tr>
+            <video controls src="../../../assets/videos/tutorial1.mp4"></video>
+          <h2>2-Como hacer tus alertas y como implementarlas a OBS</h2>
+            <tr class="Diseño">En este video te explico detenidamente como crear tus alertas desde cero y explicando todos
+              los apartados que tiene la pagina para poder agregar tus imagenes y sonidos que gustes de igual
+              manera  de como agregarlas a tu OBS y como verificar que si funcionan correctamente
+            </tr>
+            <video controls src="../../../assets/videos/tutorial.mp4"></video>
+             
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" class="DiseñoB"
+            (click)="agregar()">Agregar diseño </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog">
+              <div class="modal-content">
+               <div class="modal-header" class="DiseñoTi">
+              <h4 class="modal-title" id="exampleModalLabel" *ngIf="proceso_agregar">Agregar diseño uwu</h4>
+              <h5 class="modal-title" id="exampleModalLabel" *ngIf="proceso_editar">Editar diseño uwu</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+          <form>
+            <div class="modal-footer" class="DiseñoV">
+              <label for="recipient-name" class="col-form-label">Titulo:</label>
+              <input type="text" [(ngModel)]="form.titulo" name="titulo" class="form-control" id="recipient-name">
+            </div>
+            <div class="modal-footer" class="DiseñoV">
+              <label for="recipient-name" class="col-form-label">Nombre del autor:</label>
+              <input type="text" [(ngModel)]="form.nombre" name="nombre" class="form-control" id="recipient-name">
+            </div>
+             <div clas="modal-footer" class="DiseñoV">
+               <label for="message-text" class="col-form-label" >Descripción:</label>
+               <textarea [(ngModel)]="form.descripcion" name="descripcion" class="form-control" id="message-text"></textarea>
+             </div>
+              <div class="mb-3" >
+                <label for="formFile" class="form-label">Cargar Video</label>
+                <input class="form-control" type="file" id="formFile" accept="mp4/*" (change)="almacenar($event)" >
+              </div>      
+             <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" (click)="publicar()" *ngIf="proceso_agregar">Publicar</button>
+              <button type="button" class="btn btn-info click=" (click)="actualizar()" *ngIf="proceso_editar">Actualizar</button>
+              </div>
+          </form>
+        </div>
+       </div>
+     </div>
+     <table>
+       <td>
+       <select type="text" name="orden" [(ngModel)]="orden" (change)="ordenar()"  class="DiseñoFil">
+        <option value="titulo">Titulo</option>
+        <option value="nombre">Nombre</option>
+      </select>
+     </td>
+     <td >
+      <select type="text" name="filtro" [(ngModel)]="filtro" (change)="filtrar()" class="form-select form-select-sm" class="DiseñoFil">
+        <option value="titulo">titulo</option>
+        <option value="nombre">nombre</option>
+      </select><br>
+    </td>
+      <tr *ngFor="let registro of registros">
+        <td class="columna1">
+          <a href="{{registro.url}}" id="support_image" target="_blank"><b>Ver video</b></a>
+        </td>
+        <td class="izquierda">
+          <span class="titulo">{{registro.titulo}}</span> <br>
+          <span class="nombre">{{registro.nombre}}</span><br>
+          <span clas="descripcion">{{registro.descripcion}}</span><br>
+          <a [routerLink]="" (click)="editar(registro)" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a><br>
+          <i class="fas fa-trash icono" (click)="eliminar(registro)"></i>
+        </td>
+      </tr>
+    </table>
+  </table>
+</body>
+
+
+
+

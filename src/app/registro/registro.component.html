@@ -1,0 +1,30 @@
+<body>
+  <form>
+    <h1>Registrate</h1>
+      <div>
+        <figure>
+           <img src="../../assets/imagenes/consejos.png">
+        </figure>
+          <div class="contenedor"> 
+            <label class="color"> Nombre completo: </label>
+            <input type="text" class="Nombre" placeholder="Escribe tu nombre completo"> 
+          </div>
+            <div class="contenedor">
+              <label class="color"> Correo Electronico: </label>
+              <input type="email" class="Correo" placeholder="Escribe tu Correo Electronico">
+            </div>
+              <div class="contenedor"> 
+               <label class="color"> Contraseña: </label>
+               <input type="password" class="contraseña" placeholder="Escribe tu Contraseña">
+              </div>
+                <div class="contenedor"> 
+                  <label class="color" > Confirmando contraseña: </label>
+                  <input type="password" class="confirma" placeholder="confirma tu contraseña"><br>
+                </div>
+               <button class="boton">Ingresar</button> 
+                <a class="link" [routerLink]="['../sesion']" >
+                  <p>¿Ya tienes una cuenta?, Inicia Sesion</p>
+               </a> 
+      </div>
+  </form>
+</body>
